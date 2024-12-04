@@ -7,7 +7,7 @@ const MainNav = () => {
   return (
     <>
       <Button variant={'none'} asChild>
-        <Link href={'/'} className="text-3xl lg:text-5xl text-center font-bold">
+        <Link href={'/'} className="text-xl lg:text-5xl text-center font-bold">
           Shoppy
         </Link>
       </Button>
