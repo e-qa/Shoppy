@@ -20,14 +20,14 @@ const AnimatedCounter = ({
       easing: 'easeInOutExpo',
       duration: 700,
       round: 1,
-      update: (ani: any) => {
+      update: (ani) => {
         if (counterRef.current) {
-          const currentValue = ani.animations[0].currentValue as number;
+          const currentValue = ani.animations[0].currentValue;
           counterRef.current.innerText = `${currentValue}+`;
         }
       },
     });
-  }, []);
+  }, [start, end]);
 
   return (
     <>
