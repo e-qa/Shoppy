@@ -14,7 +14,7 @@ const carouselImages = [img1, img2, img3];
 
 function HeroCarousel() {
   return (
-    <div className="">
+    <div>
       <Carousel
         opts={{
           loop: true,
