@@ -8,3 +8,14 @@ export const carouselProducts = async () => {
   });
   return products;
 };
+
+export const GetAllProducts = ({ search = '' }: { search: string }) => {
+  return db.product.findMany({
+    where: {
+      OR: [{ name: { contains: search, mode: 'insensitive' } }],
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+};

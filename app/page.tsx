@@ -11,7 +11,6 @@ export default function Home() {
         <Hero />
         <SectionTitle title="new arrivals" />
         <Suspense fallback={<LoadingContainer />}>
-          {/* <LoadingContainer /> */}
           <ProductCarousel />
         </Suspense>
       </div>
