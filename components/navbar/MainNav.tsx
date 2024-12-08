@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 import Links from './Links';
 import NavSearch from './NavSearch';
+import { Suspense } from 'react';
 
 const MainNav = () => {
   return (
@@ -15,7 +16,9 @@ const MainNav = () => {
         <Links className="hidden md:flex ml-4" />
       </div>
       <div className="hidden md:flex">
-        <NavSearch />
+        <Suspense>
+          <NavSearch />
+        </Suspense>
       </div>
     </>
   );

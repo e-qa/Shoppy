@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Menu as MenuIcon } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { usePathname } from 'next/navigation';
 import Links from './Links';
 import NavSearch from './NavSearch';
@@ -51,7 +51,9 @@ const MiniNav = () => {
             <SheetDescription aria-describedby={undefined} />
           </SheetHeader>
           <Links className="flex flex-col gap-4" />
-          <NavSearch />
+          <Suspense>
+            <NavSearch />
+          </Suspense>
         </SheetContent>
       </Sheet>
     </div>
