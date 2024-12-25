@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import { FaShoppingBag } from 'react-icons/fa';
-import { FaUserLarge } from 'react-icons/fa6';
 
 import {
   DropdownMenu,
@@ -11,6 +10,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs';
+import SingOutLink from './SingOutLink';
+import UserIcon from './UserIcon';
 export const NavButtons = () => {
   const numItemsInCart = 6;
   return (
@@ -39,17 +41,34 @@ export const LinksDropdown = () => {
           size={'icon'}
           className="flex gap-4 max-w-[100px]"
         >
-          <FaUserLarge />
+          <UserIcon />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>Profile</DropdownMenuItem>
-        <DropdownMenuItem>Billing</DropdownMenuItem>
-        <DropdownMenuItem>Team</DropdownMenuItem>
-        <DropdownMenuItem>Subscription</DropdownMenuItem>
-      </DropdownMenuContent>
+
+      <SignedOut>
+        <DropdownMenuContent>
+          <DropdownMenuItem>
+            <SignInButton mode="modal">
+              <button>Login</button>
+            </SignInButton>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <SignUpButton mode="modal">
+              <button>Register</button>
+            </SignUpButton>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </SignedOut>
+      <SignedIn>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem>
+            <SingOutLink />
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </SignedIn>
     </DropdownMenu>
   );
 };

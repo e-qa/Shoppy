@@ -8,12 +8,11 @@ const Hero = () => {
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center ">
       <div className="flex flex-col gap-4">
         <h1 className="max-w-2xl font-bold text-4xl tracking-tighter sm:text-6xl">
-          FIND CLOTHES THAT MATCHES YOUR STYLE
+          Find Home Items That Match Your Style
         </h1>
         <p>
-          Browse through our diverse range of meticulously crafted garments,
-          designed to bring out your individuality and cater to your sense of
-          style.
+          Browse through our diverse range of carefully crafted home items,
+          designed to enhance your living space and reflect your unique style.
         </p>
         <div className="w-24">
           <Button asChild size={'lg'}>
